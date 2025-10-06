@@ -1,0 +1,10 @@
+FROM node:18-alpine
+
+WORKDIR /app/backend
+COPY project/backend/package*.json ./
+RUN npm install
+COPY project/backend .
+
+EXPOSE 3001
+CMD ["node", "index.js"]
+
